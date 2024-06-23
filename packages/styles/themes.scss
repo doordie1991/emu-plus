@@ -1,0 +1,50 @@
+// 主题颜色
+$main-color: (
+    dark: #191a23,
+    light: #ffffff
+);
+
+// 主体菜单颜色
+$main-menu-color: (
+    dark: #ffffff,
+    light: #191a23
+);
+
+// 组件颜色
+$cmp-color: (
+    theme1: #191a23,
+    theme2: #00a29a,
+    theme3: #2969ab,
+    theme4: #eb7347,
+    theme5: #84af9b,
+    theme6: #20b7dd
+);
+
+// 组件激活背景颜色
+$cmp-active-bg: (
+    theme1: #282828,
+    theme2: #078d85,
+    theme3: #1a5ea5,
+    theme4: #e9602e,
+    theme5: #a9c8ba,
+    theme6: #08a4cb
+);
+
+// 组件激活颜色
+$cmp-active-color: (
+    theme1: #e6a23c,
+    theme2: #f2f6fc,
+    theme3: #e6a23c,
+    theme4: #f2f6fc,
+    theme5: #f2f6fc,
+    theme6: #f1ba67
+);
+
+
+// 侧边栏菜单内部背景颜色
+$sidebar-menu-inline-bg: (
+    dark: #101117,
+    light: #ffffff
+);
+
+

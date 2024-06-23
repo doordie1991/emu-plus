@@ -1,0 +1,116 @@
+#{$prefix}-tabnav {
+    width: 100%;
+    box-sizing: border-box;
+    @include flex-row();
+    &__tabs {
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-grow: 1;
+        background: #f7f7f7;
+
+        .el-tabs {
+            height: 32px;
+        }
+
+        :depp(.el-tabs__header),
+        :deep(.el-tabs__nav-wrap),
+        :deep(.el-tabs__nav-scroll),
+        :deep(.el-tabs__nav) {
+            height: 100%;
+        }
+
+        :deep(.el-tabs__nav) {
+            width: 100%;
+            border: 0 !important;
+        }
+
+        :deep(.el-tabs__item) {
+            padding: 0 12px !important;
+            background-color: #fff;
+            border-radius: 2px;
+            color: #909399;
+            margin-right: 4px;
+            border: 1px solid #dcdfe6 !important;
+            box-sizing: border-box;
+            font-size: 12px;
+            @include vertical-center(32px);
+
+            &.is-active {
+                @include theme-color('color', $cmp-active-color);
+            }
+
+            .em-icon {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+
+            .item-txt {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__control {
+        flex-shrink: 0;
+
+        .dropdown-btn {
+            display: inline-block;
+            width: 32px;
+            text-align: center;
+            @include vertical-center(32px);
+            cursor: pointer;
+            border: 1px solid #dcdfe6;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .dropdown-icon {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    }
+
+    &__contextmenu {
+        position: fixed;
+        padding: 5px 0;
+        background-color: #fff;
+        border: 1px solid #ebeef5;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+
+        li {
+            list-style: none;
+            line-height: 30px;
+            padding: 0 15px;
+            margin: 0;
+            font-size: 13px;
+            color: #606266;
+            cursor: pointer;
+            outline: none;
+
+            &:first-child {
+                border-bottom: 1px solid #ebeef5;
+            }
+
+            .em-icon {
+                margin-right: 7px;
+                font-size: 17px;
+            }
+
+            &:hover {
+                background-color: #ecf5ff;
+                color: #66b1ff;
+            }
+        }
+    }
+
+    .el-tabs__nav-next,
+    .el-tabs__nav-prev {
+        line-height: 28px;
+        color: #dcdfe6;
+        font-size: 16px;
+        background-color: #fff;
+        border: 1px solid #dcdfe6;
+    }
+}

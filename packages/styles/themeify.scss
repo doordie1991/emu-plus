@@ -1,0 +1,19 @@
+@import './themes.scss';
+
+@mixin theme-mode($key, $valueMap) {
+    $themes: light, dark;
+    @each $theme in $themes {
+        body[data-theme-mode='#{$theme}'] & {
+            #{$key}: map-get($valueMap, $theme);
+        }
+    }
+}
+
+@mixin theme-color($key, $valueMap) {
+    $themes: theme1, theme2, theme3, theme4, theme5, theme6;
+    @each $theme in $themes {
+        body[data-theme-color='#{$theme}'] & {
+            #{$key}: map-get($valueMap, $theme);
+        }
+    }
+}

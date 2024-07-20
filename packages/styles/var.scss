@@ -1,0 +1,34 @@
+// class前缀
+$prefix: '.em';
+
+// Color
+$color-primary: #2d8cf0;
+$color-success: #19be6b;
+$color-error: #ed4014;
+$color-warning: #ff9900;
+$color-info: #909399;
+$color-danger: #f56c6c;
+
+// Border Color
+$borer-color-primary: #dcdfe6;
+$borer-color-primary-light: #e4e7ed;
+
+// Text Color
+$text-color-primary: #303133;
+$text-color-placeholder: #c9c9c9;
+$text-color-disabled: #cccccc;
+
+/*面板全屏时坐标*/
+$z-index-panel-fullscreen: 1800;
+
+/*抽屉坐标*/
+$z-index-drawer-modal: 1802;
+$z-index-drawer-dialog: 1804;
+
+/*列表页坐标*/
+$z-index-query-panel: 1806;
+$z-index-query-advanced: 1808;
+$z-index-query-fullscreen: 1810;
+
+/*阴影*/
+$panel-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);

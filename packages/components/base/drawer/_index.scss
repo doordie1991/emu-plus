@@ -1,0 +1,198 @@
+#{$prefix}-drawer {
+    &__modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background: #000;
+        z-index: $z-index-drawer-modal;
+    }
+
+    &__dialog {
+        position: fixed;
+        @include flex-column();
+        top: 0;
+        height: 100%;
+        background: #fff;
+        z-index: $z-index-drawer-dialog;
+        box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+    }
+
+    &__header {
+        @include flex-row();
+        padding: 0 10px;
+        @include vertical-center(50px);
+        border-bottom: 1px solid $borer-color-primary;
+        box-sizing: border-box;
+
+        &-icon {
+            padding: 0 5px 0 0;
+            width: 30px;
+            font-size: 1.5rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        &-title {
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        &-toolbar {
+            position: relative;
+            flex-shrink: 0;
+
+            .em-button {
+                margin-left: 0;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                padding: 10px 7px;
+                @include theme-color('color', $cmp-color);
+                user-select: none;
+                outline: none;
+                transition: all 0.2s ease-in-out;
+                font-size: 16px;
+                width: 30px;
+                height: 30px;
+
+                &:hover {
+                    @include theme-color('color', $cmp-active-color);
+                    transform: scale(1.2);
+                }
+
+                .em-icon {
+                    transform: scale(1) !important;
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 0;
+        flex: 1;
+
+        &-wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        :deep(.el-scrollbar__view) {
+            box-sizing: border-box !important;
+            padding: 8px;
+        }
+    }
+
+    &__footer {
+        padding: 0 10px;
+        flex-shrink: 0;
+        @include vertical-center(50px);
+        border-top: 1px solid $borer-color-primary;;
+        text-align: right;
+    }
+
+    &__drag {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 0;
+
+        &-left {
+            right: 0;
+        }
+
+        :deep(.move-trigger) {
+            position: absolute;
+            top: 50%;
+            width: 6px;
+            height: 40px;
+            line-height: 40px;
+            background: rgb(243, 243, 243);
+            transform: translate(-50%, -50%);
+            border-radius: 4px;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+            cursor: col-resize;
+
+            .move-trigger__point {
+                display: inline-block;
+                width: 50%;
+                transform: translateX(50%);
+
+                i {
+                    display: block;
+                    border-bottom: 1px solid rgb(192, 192, 192);
+                    padding-bottom: 2px;
+                }
+            }
+        }
+    }
+
+    &.left {
+        #{$prefix}-drawer__dialog {
+            left: 0;
+        }
+    }
+
+    &.right {
+        #{$prefix}-drawer__dialog {
+            right: 0;
+        }
+    }
+
+    &.fullscreen {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: $z-index-panel-fullscreen;
+
+        > #{$prefix}-drawer__dialog {
+            width: 100% !important;
+
+            > #{$prefix}drawer-drag {
+                display: none;
+            }
+        }
+    }
+
+    &.draggable {
+        #{$prefix}-drawer__header-title {
+            user-select: none;
+        }
+    }
+
+    //过渡动画
+    .move-right-enter-from {
+        transform: translateX(100%);
+    }
+    .move-right-leave-from {
+        transform: translateX(0%);
+    }
+    .move-right-leave-to {
+        transform: translateX(100%);
+    }
+
+    .move-left-enter-from {
+        transform: translateX(-100%);
+    }
+    .move-left-leave-from {
+        transform: translateX(0%);
+    }
+    .move-left-leave-to {
+        transform: translateX(-100%);
+    }
+
+    .move-right-enter-active,
+    .move-right-leave-active,
+    .move-left-enter-active,
+    .move-left-leave-active {
+        transition: all 0.3s linear;
+    }
+}

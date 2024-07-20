@@ -1,0 +1,47 @@
+{
+    "name": "emu-plus",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm-run-all --parallel start:*",
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "start:base": "cd apps/emu-base && npm run dev",
+        "start:docs": "cd apps/emu-docs && npm run dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.7.2",
+        "dayjs": "^1.11.11",
+        "element-plus": "^2.7.6",
+        "highlight.js": "^11.10.0",
+        "lodash": "^4.17.21",
+        "nprogress": "^0.2.0",
+        "pinia": "^2.0.29",
+        "pinia-plugin-persistedstate": "^3.2.1",
+        "qiankun": "^2.10.16",
+        "qs": "^6.12.3",
+        "sass": "1.77.6",
+        "screenfull": "^6.0.2",
+        "store": "^2.0.12",
+        "unplugin-element-plus": "^0.4.1",
+        "vue": "^3.3.4",
+        "vue-i18n": "^9.2.2",
+        "vue-router": "^4.1.6"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/node": "^20.14.10",
+        "@types/nprogress": "^0.2.3",
+        "@types/qs": "^6.9.15",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "colada-plugin": "^0.1.0",
+        "turbo": "^2.0.9",
+        "vite": "^4.0.0"
+    },
+    "packageManager": "pnpm@9.5.0"
+}

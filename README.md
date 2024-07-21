@@ -25,20 +25,12 @@ emu-plus 是基于vue3+typescript+qiankun等技术栈实现的微前端应用框
 │   ├── assets
 │   ├── components
 │   ├── directive
-│   ├── dist
 │   ├── hooks
-│   ├── index.html
-│   ├── index.ts
 │   ├── locales
-│   ├── package.json
 │   ├── store
 │   ├── styles
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
 │   ├── types
 │   ├── utils
-│   └── vite.config.ts
 ├── pnpm-workspace.yaml --pnpm工作间设置
 └── turbo.json  --turborepo 设置
 
